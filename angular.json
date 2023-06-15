@@ -102,6 +102,37 @@
           }
         }
       }
+    },
+    "rv-lib": {
+      "projectType": "library",
+      "root": "projects/rv-lib",
+      "sourceRoot": "projects/rv-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/rv-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rv-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/rv-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rv-lib/src/test.ts",
+            "tsConfig": "projects/rv-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/rv-lib/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
