@@ -12,3 +12,24 @@ export class GenericClass {
   }
 
 }
+
+export class IPersonneService {
+  protected gc: GenericClass | undefined = undefined;
+  constructor(private genericClass: GenericClass | undefined) {
+
+  }
+
+}
+
+export class PersonneService extends IPersonneService {
+  protected gxc: GenericClass | undefined = undefined;
+
+  constructor() {
+    super()
+    
+  }
+
+  getPersonnes() {
+    this.genericClass.showSomeText()
+  }
+}

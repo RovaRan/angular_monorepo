@@ -30,7 +30,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/mmm.js",
+              "src/assets/js/mmm2.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -134,5 +137,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "459f666b-6def-4473-87b8-a584c18c6459"
   }
 }
