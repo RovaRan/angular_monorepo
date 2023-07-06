@@ -1,3 +1,9 @@
-<p>child works!</p>
+<p>Person data from API</p>
 
-{{ title }}
+<div *ngIf="personData$ | async as data">
+ <p> {{ data.name }} </p>
+ <p> {{ data.age }} </p>
+ <p> {{ data.position }} </p>
+</div>
+
+<hr>

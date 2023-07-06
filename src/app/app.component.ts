@@ -1,5 +1,17 @@
-import { Component, createPlatform } from '@angular/core';
-import { catchError, combineLatest, filter, forkJoin, interval, map, Observable, observeOn, of, Subscription, tap, throwError, } from 'rxjs';
+import { Component } from '@angular/core';
+import { 
+  combineLatest,
+  filter,
+  forkJoin,
+  interval,
+  map,
+  Observable,
+  of,
+  Subscription,
+  tap,
+  throwError
+} from 'rxjs';
+import { GenericService } from './services/generic.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +22,10 @@ export class AppComponent {
   title = 'private-angular-project';
   updatedText = 'random';
   obs: Subscription = new Subscription();
+
+  constructor(private genericService: GenericService) {
+
+  }
 
   // Emit and observe Observable value
   testObs() {
@@ -267,5 +283,12 @@ export class AppComponent {
   // Pour réagir au changement de la updatedText
   reactToTextUpdate(newValue: string) {
     console.log(' How are you ', newValue)
+  }
+
+  debounce() {
+    console.log(' Debounce ');
+    const funct = () => console.log('Here is the function'); // that will be called after 3 seconds
+    const delay = 3000;
+    this.genericService.debounce(funct, delay)();
   }
 }

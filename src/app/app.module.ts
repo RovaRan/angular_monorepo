@@ -9,6 +9,8 @@ import { ChildComponent } from './components/child/child.component';
 import { ContentProjectionComponent } from './components/content-projection/content-projection.component';
 import { RvLibModule } from 'rv-lib';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     RvLibModule,
     UpperCasePipe,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

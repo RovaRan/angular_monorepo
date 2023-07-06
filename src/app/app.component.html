@@ -21,6 +21,8 @@
 <button (click)="unsubscribeFromObs()">unsubscribeFromObs</button>
 <br>
 <button (click)="testErrorPipe()">testErrorPipe</button>
+<br>
+<button (click)="debounce()">Debounce Test</button>
 <hr>
 <h2>Test Observable</h2>
 <input [(ngModel)]="updatedText" (ngModelChange)="reactToTextUpdate($event)" type="text">

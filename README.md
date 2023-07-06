@@ -1,8 +1,19 @@
 # Documentation
 ## Typescript
-todo
-## Angular 
-todo
+### Good practices
+Avoid using if statement:
+```powershell 
+if(condition) {
+    return whatever;
+} else {
+    return anotherWhatever;
+}
+```
+instead, use ternary condition:
+```powershell 
+condition ? whatever : anotherWhatever;
+```
+
 ### Sur les libs
 ng-packagr: outils utiliser par angular CLI pour créer des packages à partir d'un code compilé.
 
