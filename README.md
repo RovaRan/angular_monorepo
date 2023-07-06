@@ -2,20 +2,20 @@
 ## Typescript
 ### Good practices
 Avoid using if statement:
-```powershell 
-if(condition) {
+```Typescript 
+if (condition) {
     return whatever;
 } else {
     return anotherWhatever;
 }
 ```
 instead, use ternary condition:
-```powershell 
-condition ? whatever : anotherWhatever;
+```Typescript 
+return condition ? whatever : anotherWhatever;
 ```
 
 ### Sur les libs
-ng-packagr: outils utiliser par angular CLI pour créer des packages à partir d'un code compilé.
+`ng-packagr`: outils utiliser par angular CLI pour créer des packages à partir d'un code compilé.
 
 Pour créer sa propre lib, lancer la commande :
 ```powershell 
@@ -37,9 +37,9 @@ ng build my-lib --configuration development
 ng test my-lib
 ng lint my-lib
 ```
-Les commandes créeront un dossier dist/my-lib
+Les commandes créeront un dossier `dist/my-lib`
 
-Plusieurs points sont à prendre en compte pour factorier des parties d'une application en bibliothèque. 
+Plusieurs points sont à prendre en compte pour factoriser des parties d'une application en bibliothèque. 
 (Plus de détails dans le lien de l'article)
 
 Pour publier la bibliothèque:
@@ -49,10 +49,8 @@ cd dist/my-lib
 npm publish
 ```
 
-Pour utiliser la lib: 
-ng build my-lib
 Une lib non construite (builder) ne peut pas être utiliser.
-Et dans l'application:
+Pour l'importer:
 ```Typescript
 import { myExport } from 'my-lib';
 ```
@@ -62,13 +60,4 @@ Pour un build incrémentiels, chaque fois qu'un fichier est modifié, une constr
 ng build my-lib --watch
 ```
 
-
-
 Source: [Création d'une lib](https://angular.io/guide/creating-libraries)
-
-D'autres sujets intéressants:
-- https://dev.to/younup/a-quoi-servent-les-peerdependencies-dans-le-package-json-3g29
-- https://angular.io/guide/singleton-services
-- https://angular.io/guide/schematics-for-libraries
-- https://angular.io/guide/file-structure
-- https://angular.io/guide/file-structure#multiple-projects
