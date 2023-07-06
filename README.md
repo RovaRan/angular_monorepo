@@ -61,3 +61,6 @@ ng build my-lib --watch
 ```
 
 Source: [Création d'une lib](https://angular.io/guide/creating-libraries)
+
+## Monorepo
+`// todo`
